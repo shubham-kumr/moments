@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Moments</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="navbar">
+            <div class="logo">moments</div>
+            <div class="user-info" id="userMenu">
+                <!-- <img src="<%= user.picture %>" alt="<%= user.name %>" class="user-avatar"> -->
+                <span><%= user.name %></span>
+                <div class="dropdown-menu">
+                    <a href="/auth/logout" class="dropdown-item">Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <button id="addMemoryBtn" class="add-memory-btn">+</button>
+            
+            <div class="memories-grid">
+                <% memories.forEach(memory => { %>
+                    <div class="memory-card" data-id="<%= memory._id %>">
+                        <img src="<%= memory.imageUrl %>" alt="<%= memory.title %>">
+                        <div class="memory-info">
+                            <h3><%= memory.title %></h3>
+                            <p><%= memory.description %></p>
+                            <span class="date"><%= new Date(memory.createdAt).toLocaleDateString() %></span>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Memory Modal -->
+    <div id="addMemoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Memory</h2>
+            <form id="addMemoryForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" id="image" name="image" accept="image/*" required>
+                </div>
+                <button type="submit" class="submit-btn">Save Memory</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html> 

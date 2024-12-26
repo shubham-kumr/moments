@@ -1,0 +1,8 @@
+mkdir moments
+cd moments
+npm init -y 
+npm install express ejs firebase cloudinary multer dotenv express-session connect-flash moment mongoose 
+mkdir views config public routes middleware controllers
+mkdir public/css public/js public/images
+mkdir views/partials
+touch .env 

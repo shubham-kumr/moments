@@ -1,0 +1,312 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Landing Page */
+.navbar {
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.landing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+}
+.landing-content h1 {
+    font-size: 6rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+
+.get-started-btn {
+    margin-top: 2rem;
+    padding: .5rem 2rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background: #f8f9fa;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    background: #f8f9fa;
+}
+
+.memories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.memory-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    background: white;
+}
+
+.memory-card:hover {
+    transform: scale(1.05);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Add Memory Button */
+.add-memory-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #007bff;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Login Page */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px); /* Subtract navbar height */
+    background-color: #f8f9fa;
+}
+
+.login-box {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.login-box h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.login-subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 24px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.google-btn:hover {
+    background: #f8f9fa;
+    border-color: #ccc;
+}
+
+.google-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.error-message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #fee;
+    color: #c00;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Add these styles after your existing CSS */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.user-info:hover {
+    background-color: #f8f9fa;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+}
+
+.memory-info {
+    padding: 1rem;
+}
+
+.memory-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.memory-info p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.memory-info .date {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+} 

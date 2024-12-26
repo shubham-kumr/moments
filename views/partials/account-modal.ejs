@@ -1,0 +1,11 @@
+<div id="accountModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Account Details</h2>
+        <div class="account-details">
+            <p><strong>Name:</strong> <%= user?.displayName %></p>
+            <p><strong>Email:</strong> <%= user?.email %></p>
+            <a href="/auth/logout" class="logout-btn">Logout</a>
+        </div>
+    </div>
+</div> 
